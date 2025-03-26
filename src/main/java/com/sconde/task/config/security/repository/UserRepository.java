@@ -1,5 +1,6 @@
-package com.sconde.task.config.security;
+package com.sconde.task.config.security.repository;
 
+import com.sconde.task.config.security.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 

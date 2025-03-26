@@ -1,4 +1,4 @@
-package com.sconde.task.config.security;
+package com.sconde.task.config.security.models;
 
 import jakarta.persistence.*;
 import lombok.*;

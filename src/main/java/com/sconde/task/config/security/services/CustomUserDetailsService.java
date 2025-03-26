@@ -1,5 +1,7 @@
-package com.sconde.task.config.security;
+package com.sconde.task.config.security.services;
 
+import com.sconde.task.config.security.repository.UserRepository;
+import com.sconde.task.config.security.models.User;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 import java.util.Collections;
