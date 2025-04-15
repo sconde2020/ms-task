@@ -13,7 +13,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
     private static final String SECRET_KEY = "JikfSiuFTR3dx230c5PT6Yk9bNPD/a0vFVQ3eqQrzeY="; // Use a secure key
-    private static final long EXPIRATION_TIME = 86400000; // 1 day
+    private final long EXPIRATION_TIME = 60 * 60 * 1000; // 1 hour in milliseconds
 
     private SecretKey getSigningKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);

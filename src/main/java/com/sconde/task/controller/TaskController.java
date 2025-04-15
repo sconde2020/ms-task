@@ -17,7 +17,9 @@ public class TaskController {
 
     @GetMapping
     public List<Task> getAllTasks() {
-        return taskService.getAll();
+        List<Task> tasks = taskService.getAll();
+        System.out.println(tasks);
+        return tasks;
     }
 
     @PostMapping
@@ -33,11 +35,13 @@ public class TaskController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Task> updateTache(@PathVariable Long id, @RequestBody Task taskDetails) {
+    public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task taskDetails) {
         return taskService.getById(id).map(task -> {
             task.setTitle(taskDetails.getTitle());
             task.setDescription(taskDetails.getDescription());
             task.setDone(taskDetails.getDone());
+            task.setCreatedAt(taskDetails.getCreatedAt());
+            task.setUpdatedAt(taskDetails.getUpdatedAt());
             return ResponseEntity.ok(taskService.save(task));
         }).orElse(ResponseEntity.notFound().build());
     }
