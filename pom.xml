@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sconde</groupId>
-	<artifactId>task</artifactId>
+	<artifactId>ms-task</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Task</name>
 	<description>API CRUD avec Spring Boot et Angular</description>

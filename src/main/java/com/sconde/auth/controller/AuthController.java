@@ -1,9 +1,9 @@
-package com.sconde.task.controller;
+package com.sconde.auth.controller;
 
-import com.sconde.task.config.security.models.Role;
-import com.sconde.task.config.security.models.User;
-import com.sconde.task.config.security.repository.UserRepository;
-import com.sconde.task.config.security.services.JwtService;
+import com.sconde.auth.model.Role;
+import com.sconde.auth.model.User;
+import com.sconde.auth.repository.UserRepository;
+import com.sconde.auth.service.JwtService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

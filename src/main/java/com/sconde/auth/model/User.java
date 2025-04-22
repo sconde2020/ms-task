@@ -1,4 +1,4 @@
-package com.sconde.task.config.security.models;
+package com.sconde.auth.model;
 
 import jakarta.persistence.*;
 import lombok.*;

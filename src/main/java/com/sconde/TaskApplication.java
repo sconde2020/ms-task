@@ -1,4 +1,4 @@
-package com.sconde.task;
+package com.sconde;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

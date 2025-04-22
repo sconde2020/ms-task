@@ -1,6 +1,6 @@
-package com.sconde.task.config.security;
+package com.sconde.auth.config;
 
-import com.sconde.task.config.security.services.CustomUserDetailsService;
+import com.sconde.auth.service.CustomUserDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

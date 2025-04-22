@@ -1,7 +1,7 @@
-package com.sconde.task.config.security;
+package com.sconde.auth.config;
 
-import com.sconde.task.config.security.services.CustomUserDetailsService;
-import com.sconde.task.config.security.services.JwtService;
+import com.sconde.auth.service.CustomUserDetailsService;
+import com.sconde.auth.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,8 +10,8 @@ import lombok.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
