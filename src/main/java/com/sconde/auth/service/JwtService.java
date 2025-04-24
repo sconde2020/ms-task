@@ -13,7 +13,6 @@ import java.util.function.Function;
 @Service
 public class JwtService {
     private static final String SECRET_KEY = "JikfSiuFTR3dx230c5PT6Yk9bNPD/a0vFVQ3eqQrzeY="; // Use a secure key
-    private final long EXPIRATION_TIME = 60 * 60 * 1000; // 1 hour in milliseconds
 
     private SecretKey getSigningKey() {
         byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
@@ -21,10 +20,11 @@ public class JwtService {
     }
 
     public String generateToken(String username) {
+        long expirationTime = 60 * 60 * 1000;  // 1 hour in milliseconds
         return Jwts.builder()
                 .claims().subject(username).and() // Updated subject setting
                 .issuedAt(new Date())
-                .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+                .expiration(new Date(System.currentTimeMillis() + expirationTime))
                 .signWith(getSigningKey()) // Updated signing method
                 .compact();
     }
