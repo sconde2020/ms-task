@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 @RestController
@@ -43,11 +44,11 @@ public class AuthController {
 
     @PostMapping("/register")
     @Operation(summary = "Register user")
-    public String register(@RequestBody User user) {
+    public ResponseEntity<?>  register(@RequestBody User user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setRole(Role.USER);
         userRepository.save(user);
-        return "User registered successfully!";
+        return ResponseEntity.ok(Map.of("message", "User registered"));
     }
 
     @PostMapping("/login")
