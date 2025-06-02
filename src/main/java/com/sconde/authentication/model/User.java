@@ -1,4 +1,4 @@
-package com.sconde.auth.model;
+package com.sconde.authentication.model;
 
 import jakarta.persistence.*;
 import lombok.*;

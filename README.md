@@ -27,7 +27,7 @@ It is built using Java and follows best practices for backend development.
 
 ## Technologies Used
 
-- Java 17
+- Java 21
 - Spring Boot
 - Maven
 - Postgres

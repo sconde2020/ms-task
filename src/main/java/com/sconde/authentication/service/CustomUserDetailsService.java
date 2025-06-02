@@ -1,7 +1,7 @@
-package com.sconde.auth.service;
+package com.sconde.authentication.service;
 
-import com.sconde.auth.repository.UserRepository;
-import com.sconde.auth.model.User;
+import com.sconde.authentication.repository.UserRepository;
+import com.sconde.authentication.model.User;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
 import java.util.Collections;

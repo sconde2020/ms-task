@@ -1,6 +1,6 @@
-package com.sconde.auth.repository;
+package com.sconde.authentication.repository;
 
-import com.sconde.auth.model.User;
+import com.sconde.authentication.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 

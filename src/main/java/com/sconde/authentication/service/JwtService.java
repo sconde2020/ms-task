@@ -1,4 +1,4 @@
-package com.sconde.auth.service;
+package com.sconde.authentication.service;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;

@@ -1,9 +1,9 @@
-package com.sconde.auth.controller;
+package com.sconde.authentication.controller;
 
-import com.sconde.auth.model.Role;
-import com.sconde.auth.model.User;
-import com.sconde.auth.repository.UserRepository;
-import com.sconde.auth.service.JwtService;
+import com.sconde.authentication.model.Role;
+import com.sconde.authentication.model.User;
+import com.sconde.authentication.repository.UserRepository;
+import com.sconde.authentication.service.JwtService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;

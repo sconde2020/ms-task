@@ -1,7 +1,7 @@
-package com.sconde.auth.config;
+package com.sconde.authentication.config;
 
-import com.sconde.auth.service.CustomUserDetailsService;
-import com.sconde.auth.service.JwtService;
+import com.sconde.authentication.service.CustomUserDetailsService;
+import com.sconde.authentication.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
