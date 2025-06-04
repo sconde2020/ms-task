@@ -1,6 +1,6 @@
-package com.sconde.task.controller;
+package com.sconde.task.web;
 
-import com.sconde.task.model.Task;
+import com.sconde.task.application.dto.TaskDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -21,7 +21,7 @@ public interface TaskController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping
-    ResponseEntity<List<Task>> getAllTasks();
+    ResponseEntity<List<TaskDto>> getAllTasks();
 
     @Operation(summary = "Create a new task")
     @ApiResponses({
@@ -30,7 +30,7 @@ public interface TaskController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PostMapping
-    ResponseEntity<Task> createTasks(@Valid @RequestBody Task task);
+    ResponseEntity<TaskDto> createTasks(@Valid @RequestBody TaskDto dto);
 
     @Operation(summary = "Get task by ID")
     @ApiResponses({
@@ -39,7 +39,7 @@ public interface TaskController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/{id}")
-    ResponseEntity<Task> getTaskById(@PathVariable Long id);
+    ResponseEntity<TaskDto> getTaskById(@PathVariable Long id);
 
     @Operation(summary = "Update a given task")
     @ApiResponses({
@@ -48,7 +48,7 @@ public interface TaskController {
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PutMapping("/{id}")
-    ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task taskDetails);
+    ResponseEntity<TaskDto> updateTask(@PathVariable Long id, @RequestBody TaskDto dto);
 
     @Operation(summary = "Delete a given task")
     @ApiResponses({

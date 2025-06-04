@@ -1,4 +1,4 @@
-package com.sconde.task.exception;
+package com.sconde.shared.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String message) {

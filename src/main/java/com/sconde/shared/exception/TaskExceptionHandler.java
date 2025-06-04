@@ -1,4 +1,4 @@
-package com.sconde.task.exception;
+package com.sconde.shared.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

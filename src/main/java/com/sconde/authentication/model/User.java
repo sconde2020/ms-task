@@ -3,13 +3,10 @@ package com.sconde.authentication.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
-@Table(name = "users")
-@Getter
-@Setter
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
