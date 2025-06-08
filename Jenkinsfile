@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'openjdk-21' // Doit être installé dans Jenkins (Manage Jenkins > Global Tool Configuration)
+        jdk 'openjdk-21.0.7' // Doit être installé dans Jenkins (Manage Jenkins > Global Tool Configuration)
         maven 'maven-3.8.7' // Idem
     }
 
