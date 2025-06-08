@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/auth")
-@Tag(name = "Authentication API", description = "Operations related to authentication")
+@Tag(name = "Authentication API", description = "Operations related to user authentication")
 public interface AuthController {
 
     @PostMapping("/register")
