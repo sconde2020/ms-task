@@ -1,9 +1,8 @@
+[![Build Status](https://8993-2001-861-36c1-be50-a2bd-b626-e759-786d.ngrok-free.app/job/ms-task-pipeline/badge/icon)](https://8993-2001-861-36c1-be50-a2bd-b626-e759-786d.ngrok-free.app/job/ms-task-pipeline/)
+
 # ms-task
 
 Backend part of task-manager application.
-
-[![Build Status](https://c366-2001-861-36c1-be50-a094-98ed-991a-74f6.ngrok-free.app/job/ms-task-pipeline/badge/icon)](https://c366-2001-861-36c1-be50-a094-98ed-991a-74f6.ngrok-free.app/job/ms-task-pipeline/)
-
 
 ## Table of Contents
 
