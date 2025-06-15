@@ -1,6 +1,5 @@
 [![Build Status](https://lucky-earwig-bold.ngrok-free.app/job/multi-branch-pipeline-ms-task/badge/icon)](https://lucky-earwig-bold.ngrok-free.app/job/multi-branch-pipeline-ms-task/)
 
-
 # ms-task
 
 Backend part of task-manager application.
