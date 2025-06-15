@@ -1,5 +1,6 @@
 package com.sconde.task.application.service;
 
+import com.sconde.shared.exception.ResourceNotFoundException;
 import com.sconde.task.application.dto.TaskDto;
 import com.sconde.task.application.mapper.TaskMapper;
 import com.sconde.task.domain.model.Task;
@@ -7,11 +8,12 @@ import com.sconde.task.infrastructure.TaskRepositoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TaskServiceImpl implements TaskService {
+
     @Autowired
     private TaskRepositoryImpl taskRepository;
 
@@ -20,7 +22,6 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<TaskDto> getAll() {
-        taskRepository.findAll().forEach(System.out::println);
         return taskMapper.toDtoList(taskRepository.findAll());
     }
 
@@ -32,12 +33,28 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public Optional<TaskDto> getById(Long id) {
-        return taskRepository.findById(id).map(taskMapper::toDto);
+    public TaskDto getByIdOrThrow(Long id) {
+        return taskRepository.findById(id)
+                .map(taskMapper::toDto)
+                .orElseThrow(() -> new ResourceNotFoundException("Task with ID " + id + " not found"));
+    }
+
+    @Override
+    public TaskDto update(Long id, TaskDto dto) {
+        taskRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Task with ID " + id + " not found"));
+
+        dto.setId(id);
+        dto.setUpdatedAt(LocalDate.now());
+
+        Task updated = taskRepository.save(taskMapper.toEntity(dto));
+        return taskMapper.toDto(updated);
     }
 
     @Override
     public void delete(Long id) {
+        taskRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Task with ID " + id + " not found"));
         taskRepository.deleteById(id);
     }
 }

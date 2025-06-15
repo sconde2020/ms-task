@@ -1,20 +1,25 @@
 package com.sconde.task.web;
 
-import com.sconde.shared.exception.ResourceNotFoundException;
 import com.sconde.task.application.dto.TaskDto;
 import com.sconde.task.application.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
 public class TaskControllerImpl implements TaskController {
 
+    private final TaskService taskService;
+
     @Autowired
-    private TaskService taskService;
+    public TaskControllerImpl(TaskService taskService) {
+        this.taskService = taskService;
+    }
 
     @Override
     public ResponseEntity<List<TaskDto>> getAllTasks() {
@@ -22,35 +27,24 @@ public class TaskControllerImpl implements TaskController {
     }
 
     @Override
-    public ResponseEntity<TaskDto> createTasks(TaskDto dto) {
-        return ResponseEntity.status(201).body(taskService.save(dto));
+    public ResponseEntity<TaskDto> createTasks(@RequestBody TaskDto dto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(taskService.save(dto));
     }
 
     @Override
-    public ResponseEntity<TaskDto> getTaskById(Long id) {
-        return taskService.getById(id)
-                .map(ResponseEntity::ok)
-                .orElseThrow(() -> new ResourceNotFoundException("Task with ID " + id + " not found"));
+    public ResponseEntity<TaskDto> getTaskById(@PathVariable Long id) {
+        return ResponseEntity.ok(taskService.getByIdOrThrow(id));
     }
 
     @Override
-    public ResponseEntity<TaskDto> updateTask(Long id, TaskDto dto) {
-        return taskService.getById(id)
-                .map(existing -> {
-                    dto.setId(id);
-                    dto.setUpdatedAt(LocalDate.now());
-                    return ResponseEntity.ok(taskService.save(dto));
-                })
-                .orElseThrow(() -> new ResourceNotFoundException("Task with ID " + id + " not found"));
+    public ResponseEntity<TaskDto> updateTask(@PathVariable Long id, @RequestBody TaskDto dto) {
+        return ResponseEntity.ok(taskService.update(id, dto));
     }
 
     @Override
-    public ResponseEntity<?> deleteTask(Long id) {
-        return taskService.getById(id)
-                .map(found -> {
-                    taskService.delete(id);
-                    return ResponseEntity.ok().build();
-                })
-                .orElseThrow(() -> new ResourceNotFoundException("Task with ID " + id + " not found"));
+    public ResponseEntity<?> deleteTask(@PathVariable Long id) {
+        taskService.delete(id);
+        return ResponseEntity.ok().build();
     }
 }
+

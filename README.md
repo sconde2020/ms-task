@@ -52,7 +52,7 @@ It is built using Java and follows best practices for backend development.
    ```
 
 2. Build the project:
-    ```bash
+    ```bash 
     mvn clean install
     ```
 
@@ -70,7 +70,7 @@ It is built using Java and follows best practices for backend development.
 Once the application is running, you can access the API endpoints to manage tasks. The base URL is:
 
    ```bash
-   http://localhost:8080/api/
+   http://localhost:9090/api/
    ```
 Endpoints
 - POST /tasks: Create a new task
@@ -78,7 +78,7 @@ Endpoints
 - GET /tasks/{id}: Retrieve a task by ID
 - PUT /tasks/{id}: Update a task
 - DELETE /tasks/{id}: Delete a task
-- Swagger: http://localhost:8080/swagger-ui/index.html#/
+- Swagger: http://localhost:9090/swagger-ui/index.html#/
 
 ## Contributing
 Contributions are welcome! Please fork the repository, create a new branch, and submit a pull request with your changes.

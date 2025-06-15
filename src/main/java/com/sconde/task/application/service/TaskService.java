@@ -3,15 +3,15 @@ package com.sconde.task.application.service;
 import com.sconde.task.application.dto.TaskDto;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface TaskService {
-
     List<TaskDto> getAll();
 
-    TaskDto save(TaskDto taskDto);
+    TaskDto save(TaskDto dto);
 
-    Optional<TaskDto> getById(Long id);
+    TaskDto getByIdOrThrow(Long id);
+
+    TaskDto update(Long id, TaskDto dto);
 
     void delete(Long id);
 }
