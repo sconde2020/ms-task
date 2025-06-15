@@ -1,4 +1,4 @@
-[![Build Status](https://7914-2001-861-36c1-be50-4e1f-119e-6a23-64fd.ngrok-free.app/job/ms-task-pipeline/badge/icon)](https://7914-2001-861-36c1-be50-4e1f-119e-6a23-64fd.ngrok-free.app/job/ms-task-pipeline/)
+[![Build Status](https://lucky-earwig-bold.ngrok-free.app/job/ms-task-pipeline/badge/icon)](https://lucky-earwig-bold.ngrok-free.app/job/ms-task-pipeline/)
 
 
 # ms-task
