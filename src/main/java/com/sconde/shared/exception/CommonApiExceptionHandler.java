@@ -55,5 +55,4 @@ public class CommonApiExceptionHandler {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(Map.of("message", "An unexpected error occurred", "details", ex.getMessage()));
     }
-
 }
