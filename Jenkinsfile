@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/sconde2020/ms-task.git', branch: 'master'
+                git url: 'https://github.com/sconde2020/ms-task.git'
             }
         }
 
